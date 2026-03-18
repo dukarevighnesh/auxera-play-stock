@@ -42,7 +42,7 @@ const TradePanel = ({ stock, balance, onTrade, onClose, ownedShares = 0 }: Trade
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: 20 }}
-      transition={transition}
+      transition={snappyTransition}
       className="bg-card rounded-lg p-5 shadow-depth"
     >
       <AnimatePresence mode="wait">
