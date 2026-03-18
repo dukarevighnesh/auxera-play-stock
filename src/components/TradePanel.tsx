@@ -13,7 +13,7 @@ interface TradePanelProps {
   ownedShares?: number;
 }
 
-const transition = { type: "tween" as const, ease: [0.2, 0.8, 0.2, 1], duration: 0.2 };
+
 
 const TradePanel = ({ stock, balance, onTrade, onClose, ownedShares = 0 }: TradePanelProps) => {
   const [type, setType] = useState<"buy" | "sell">("buy");
