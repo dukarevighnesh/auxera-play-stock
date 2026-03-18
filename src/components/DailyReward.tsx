@@ -1,13 +1,12 @@
-import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { formatCurrency } from "@/lib/stockData";
+import { snappyTransition } from "@/lib/motion";
+import { useState } from "react";
 
 interface DailyRewardProps {
   onClaim: () => void;
   claimed: boolean;
 }
-
-const transition = { type: "tween" as const, ease: [0.2, 0.8, 0.2, 1], duration: 0.2 };
 
 const DailyReward = ({ onClaim, claimed }: DailyRewardProps) => {
   const [animating, setAnimating] = useState(false);
@@ -28,7 +27,7 @@ const DailyReward = ({ onClaim, claimed }: DailyRewardProps) => {
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10 }}
-          transition={transition}
+          transition={snappyTransition}
           onClick={handleClaim}
           disabled={animating}
           className="relative overflow-hidden bg-card border border-brand/30 rounded-lg px-4 py-2.5 flex items-center gap-3 shadow-active-glow hover:border-brand/60 transition-colors"

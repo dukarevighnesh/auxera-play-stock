@@ -1,13 +1,12 @@
 import { motion } from "framer-motion";
 import type { Stock } from "@/lib/stockData";
 import { formatCurrency } from "@/lib/stockData";
+import { snappyTransition } from "@/lib/motion";
 
 interface StockCardProps {
   stock: Stock;
   onClick?: () => void;
 }
-
-const transition = { type: "tween" as const, ease: [0.2, 0.8, 0.2, 1], duration: 0.2 };
 
 const StockCard = ({ stock, onClick }: StockCardProps) => {
   const isUp = stock.change >= 0;
@@ -16,7 +15,7 @@ const StockCard = ({ stock, onClick }: StockCardProps) => {
     <motion.div
       whileHover={{ scale: 1.01 }}
       whileTap={{ scale: 0.99 }}
-      transition={transition}
+      transition={snappyTransition}
       onClick={onClick}
       className="bg-card rounded-lg p-4 cursor-pointer shadow-soft-border hover:shadow-depth transition-shadow"
     >
