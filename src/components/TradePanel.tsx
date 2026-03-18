@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import type { Stock } from "@/lib/stockData";
 import { formatCurrency } from "@/lib/stockData";
 import { toast } from "sonner";
+import { snappyTransition } from "@/lib/motion";
 
 interface TradePanelProps {
   stock: Stock;
