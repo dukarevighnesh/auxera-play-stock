@@ -129,7 +129,7 @@ const TradePanel = ({ stock, balance, onTrade, onClose, ownedShares = 0 }: Trade
 
             <motion.button
               whileTap={{ scale: 0.98 }}
-              transition={transition}
+              transition={snappyTransition}
               onClick={handleExecute}
               disabled={!canExecute}
               className={`w-full py-3 rounded-md font-medium text-sm transition-all ${
